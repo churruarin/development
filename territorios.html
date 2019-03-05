@@ -65,8 +65,9 @@ L.geoJson(data).addTo(mymap);
     }
     return output;
 };
-var manzanas = 'manzanas.geojson';
-var actividad = 'https://spreadsheets.google.com/feeds/list/1nkqVkTfWzxGQ-Ie-CkR4ML9qxLnr_Ye-mRSBevtRt8s/o42fxic/public/basic?alt=json';
+var manzanas = require('manzanas.geojson');
+var actividad = require('//spreadsheets.google.com/feeds/list/1nkqVkTfWzxGQ-Ie-CkR4ML9qxLnr_Ye-mRSBevtRt8s/o42fxic/public/basic?alt=json');
+  
     var result = join(manzanas, actividad, "tm", "tm", function(UltimaVez, Dias) {
     return {
         tm: manzanas.tm,
