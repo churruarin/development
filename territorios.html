@@ -65,15 +65,16 @@ L.geoJson(data).addTo(mymap);
     }
     return output;
 };
-var manzanas_source = 'manzanas.geojson';
-var actividad_source = 'https://spreadsheets.google.com/feeds/list/1nkqVkTfWzxGQ-Ie-CkR4ML9qxLnr_Ye-mRSBevtRt8s/o42fxic/public/basic?alt=json';
-    var result = join(manzanas_source, actividad_source, "tm", "tm", function() {
+var manzanas = 'manzanas.geojson';
+var actividad = 'https://spreadsheets.google.com/feeds/list/1nkqVkTfWzxGQ-Ie-CkR4ML9qxLnr_Ye-mRSBevtRt8s/o42fxic/public/basic?alt=json';
+    var result = join(manzanas, actividad, "tm", "tm", function(UltimaVez, Dias) {
     return {
-        id: article.id,
-        name: article.name,
-        weight: article.weight,
-        price: article.price,
-        brand: (brand !== undefined) ? brand.name : null
+        tm: manzanas.tm,
+        territorio: manzanas.territorio,
+        manzana: manzanas.manzana,
+        ultimavez: actividad.UltimaVez,
+        dias: actividad.Dias
+        //(brand !== undefined) ? brand.name : null
     };
 });
 console.log(result);
