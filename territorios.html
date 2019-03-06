@@ -40,6 +40,10 @@
     accessToken: 'pk.eyJ1IjoiYWJlbGJvdXIiLCJhIjoiY2l4dzA3M2JlMDAweTMzcXVueXBweTh3NyJ9.aH8o0Atlb5H-DLP6jIkz6g'
 }).addTo(mymap);
    // loading GeoJSON file - Here my html and usa_adm.geojson file resides in same folder
+$.getJSON("churruarin-map.geojson",function(data){
+// L.geoJson function is used to parse geojson file and load on to map
+L.geoJson(data).addTo(mymap);
+});
 $.getJSON("manzanas.geojson",function(data){
 // L.geoJson function is used to parse geojson file and load on to map
 L.geoJson(data).addTo(mymap);
