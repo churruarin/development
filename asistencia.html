@@ -1,72 +1,26 @@
 <html>
 
   
-  <script src="https://apis.google.com/js/api.js"></script>
-<script>
-  /**
-   * Sample JavaScript code for sheets.spreadsheets.values.append
-   * See instructions for running APIs Explorer code samples locally:
-   * https://developers.google.com/explorer-help/guides/code_samples#javascript
-   */
-
-  function loadClient() {
-    gapi.client.setApiKey("AIzaSyCHu7lPjGMgsv6X_U6FgL6atwHQ5Mhk_nY");
-    return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/sheets/v4/rest")
-        .then(function() { console.log("GAPI client loaded for API"); },
-              function(err) { console.error("Error loading GAPI client for API", err); });
-  }
-  // Make sure the client is loaded before calling this method.
-  function execute() {
-    return gapi.client.sheets.spreadsheets.values.append({
-      "spreadsheetId": "1m6Qli6JvhJ94-EJYf3nBDNUWbblKSeMcr-EN3SG1V5o",
-      "range": "Asistencia",
-      "insertDataOption": "INSERT_ROWS",
-      "valueInputOption": "USER_ENTERED",
-      "resource": {
-        "values": [
-          [
-            1
-          ],
-          [
-            2
-          ],
-          [
-            3
-          ],
-          [
-            4
-          ]
-        ]
-      }
-    })
-        .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              },
-              function(err) { console.error("Execute error", err); });
-  }
-  gapi.load("client");
-</script>
+<form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfqyPMNsylEjws1VkTpxbb7dc_jYlPsyCUkgqALWjI4l85RdQ/formResponse" target="_self" method="POST" id="mG61Hd">
+Publicador
+  <input type="text" name="entry.106585637" value=""></input>
+  Espectadores
+  <input type="text" name="entry.1056716961" ></input>
+ Congregacion
+  <input type="text" name="entry.1223281277"></input>
+Clave
+  <input type="text" name="entry.970010747"></input>
+ Meta
+  <input type="text" name="entry.1023303782"></input>
+                                       
+                     
+            <input type="hidden" name="fvv" value="1">
+            <input type="hidden" name="draftResponse" value="[null,null,&quot;-8112877041524363823&quot;]">
+            <input type="hidden" name="pageHistory" value="0">
+            <input type="hidden" name="fbzx" value="-8112877041524363823">
+<input type="submit">Enviar</input>
+</form>
   
-  <body>
-<button onclick="loadClient()">load</button>
-<button onclick="execute()">execute</button>
-
-  
-  <input name="Publicador" type="text" />
-  <select name="Espectadores">
-   <option selected="selected" value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-  </select>
-  <input name="congregacion" type="hidden" value="Churruarin" />
-  <input name="Clave" type="text" />
-  <input name="Enviar" type="button" value="Enviar" />
 
 
 </body>
