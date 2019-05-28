@@ -4,7 +4,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script>
         function hash() {
-        var jsonurl = $.getJSON("//sheets.googleapis.com/v4/spreadsheets/1DvqXaY0vYHuqVwGqNubevsXKWeboHfYIp8rOqyGLFO8/values/todayEvents?key=AIzaSyCHu7lPjGMgsv6X_U6FgL6atwHQ5Mhk_nY");
+        var jsonurl = $.getJSON('//sheets.googleapis.com/v4/spreadsheets/1DvqXaY0vYHuqVwGqNubevsXKWeboHfYIp8rOqyGLFO8/values/todayEvents?key=AIzaSyCHu7lPjGMgsv6X_U6FgL6atwHQ5Mhk_nY');
           var json = JSON.parse(jsonurl);
         var result = jsonata('$.values.({"congregacion": $[0],"enc": $[1]})[congregacion="Este"].enc').evaluate(json);
         document.getElementById('hash').innerHTML = result;
