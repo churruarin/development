@@ -4,15 +4,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script>
         function hash() {
-        var json = $.getJSON("//sheets.googleapis.com/v4/spreadsheets/1DvqXaY0vYHuqVwGqNubevsXKWeboHfYIp8rOqyGLFO8/values/todayEvents?key=AIzaSyCHu7lPjGMgsv6X_U6FgL6atwHQ5Mhk_nY");
-         var result = jsonata('$.values.({"congregacion": $[0],"enc": $[1]})[congregacion="Este"].enc').evaluate(json);
+        var jsonurl = $.getJSON("//sheets.googleapis.com/v4/spreadsheets/1DvqXaY0vYHuqVwGqNubevsXKWeboHfYIp8rOqyGLFO8/values/todayEvents?key=AIzaSyCHu7lPjGMgsv6X_U6FgL6atwHQ5Mhk_nY");
+          var json = JSON.parse(jsonurl);
+        var result = jsonata('$.values.({"congregacion": $[0],"enc": $[1]})[congregacion="Este"].enc').evaluate(json);
         document.getElementById('hash').innerHTML = result;
         }
     </script>
  <body> 
         <button onclick="hash()">obtener hash</button>
     <p id="hash"></p> 
-     
+      <input type="text" id="txclave" value=""></input>
+     <button onclick="url()">obtener url</button>
+    <p id="hash"></p> 
 <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfqyPMNsylEjws1VkTpxbb7dc_jYlPsyCUkgqALWjI4l85RdQ/formResponse" target="_self" method="POST" id="mG61Hd">
 Publicador
   <input type="text" name="entry.106585637" value=""></input>
