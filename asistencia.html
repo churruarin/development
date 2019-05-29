@@ -35,7 +35,8 @@ return crc^(-1)}
         };
         function url() {
             var url = decrypt(enc, document.getElementById('txclave').value);
-            document.getElementById('crc2').innerHTML = crc32(document.getElementById('crc').innerHTML);
+            document.getElementById('url').innerHTML = url
+            document.getElementById('crc2').innerHTML = crc32(url);
             var urlCompleta = "https://youtube.com/watch?v="+url;
             /*
             if(urlCompleta.match(/(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/user\/\S+|\/ytscreeningroom\?v=))([\w\-]{10,12})\b/))
