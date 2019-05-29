@@ -28,7 +28,7 @@
         function url() {
             var url = decrypt(enc, document.getElementById('txclave').value);
             var urlCompleta = "https://youtube.com/embed/"+url;
-            console.log(url)
+            
             if(urlCompleta.match(/(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/user\/\S+|\/ytscreeningroom\?v=))([\w\-]{10,12})\b/))
             {
                 //Es una url de youtube
