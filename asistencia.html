@@ -3,6 +3,7 @@
 <script src="tea-block.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script>
+        var enc
         function hash() {
             var json
        $.getJSON('https://sheets.googleapis.com/v4/spreadsheets/1DvqXaY0vYHuqVwGqNubevsXKWeboHfYIp8rOqyGLFO8/values/todayEvents?key=AIzaSyCHu7lPjGMgsv6X_U6FgL6atwHQ5Mhk_nY')
@@ -10,12 +11,17 @@
             //Devuelve el hash de sheets
             var result = jsonata('$.values.({"congregacion": $[0],"enc": $[1]})[congregacion="Este"].enc').evaluate(jsonurl);
             document.getElementById('hash').innerHTML = result;
+           enc = result;
         })
         .fail(function(){
           //Hubo un error en la solicitud
           alert("Error al generar el hash")
         })
         
+        };
+        function url() {
+            var url = decrypt(enc, document.getElementById('txclave').value);
+             document.getElementById('url').innerHTML = url;
         }
     </script>
  <body> 
@@ -23,7 +29,8 @@
     <p id="hash"></p> 
       <input type="text" id="txclave" value=""></input>
      <button onclick="url()">obtener url</button>
-    <p id="hash"></p> 
+   
+    <p id="url"></p> 
 <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfqyPMNsylEjws1VkTpxbb7dc_jYlPsyCUkgqALWjI4l85RdQ/formResponse" target="_self" method="POST" id="mG61Hd">
 Publicador
   <input type="text" name="entry.106585637" value=""></input>
