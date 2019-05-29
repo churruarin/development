@@ -8,14 +8,14 @@
        $.getJSON('https://sheets.googleapis.com/v4/spreadsheets/1DvqXaY0vYHuqVwGqNubevsXKWeboHfYIp8rOqyGLFO8/values/todayEvents?key=AIzaSyCHu7lPjGMgsv6X_U6FgL6atwHQ5Mhk_nY')
         .done(function(jsonurl){
             //Devuelve el hash de sheets
-               alert(jsonurl)
+            var result = jsonata('$.values.({"congregacion": $[0],"enc": $[1]})[congregacion="Este"].enc').evaluate(jsonurl);
+            document.getElementById('hash').innerHTML = result;
         })
         .fail(function(){
           //Hubo un error en la solicitud
-          alert("ERROR")
+          alert("Error al generar el hash")
         })
-        var result = jsonata('$.values.({"congregacion": $[0],"enc": $[1]})[congregacion="Este"].enc').evaluate(jsonurl);
-        document.getElementById('hash').innerHTML = result;
+        
         }
     </script>
  <body> 
