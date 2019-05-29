@@ -22,7 +22,18 @@
         };
         function url() {
             var url = decrypt(enc, document.getElementById('txclave').value);
-             document.getElementById('url').innerHTML = url;
+            
+            if(url.match(/(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/))
+            {
+                //Es una url de youtube
+                document.getElementById('url').innerHTML = url;
+            }
+            else
+            {
+               //No es una url de youtube
+                alert('Datos incorrectos');
+            }
+             
         }
     </script>
  <body>  
