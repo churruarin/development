@@ -12,7 +12,7 @@ var x=0;var y=0;crc=crc^(-1);for(var i=0,iTop=str.length;i<iTop;i++){y=(crc^str.
 return crc^(-1)}
         
         
-        
+        var enc
         var check
         function hash() {
             var json
@@ -24,6 +24,7 @@ return crc^(-1)}
            
             document.getElementById('hash').innerHTML = result;
            document.getElementById('crc').innerHTML = crc;
+           enc = result;
            check = crc;
         })
         .fail(function(){
