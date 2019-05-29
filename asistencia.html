@@ -14,7 +14,7 @@
           //Hubo un error en la solicitud
           alert("ERROR")
         })
-        var result = jsonata('$.values.({"congregacion": $[0],"enc": $[1]})[congregacion="Este"].enc').evaluate(json);
+        var result = jsonata('$.values.({"congregacion": $[0],"enc": $[1]})[congregacion="Este"].enc').evaluate(jsonurl);
         document.getElementById('hash').innerHTML = result;
         }
     </script>
