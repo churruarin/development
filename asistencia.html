@@ -23,7 +23,7 @@
         function url() {
             var url = decrypt(enc, document.getElementById('txclave').value);
             var urlCompleta = "https://youtube.com/watch?v="+url;
-            if(urlCompleta.match(/(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/))
+            if(urlCompleta.match(/(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/user\/\S+|\/ytscreeningroom\?v=))([\w\-]{10,12})\b/))
             {
                 //Es una url de youtube
                 document.getElementById('url').innerHTML = url;
